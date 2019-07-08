@@ -23,8 +23,13 @@ const Docked: React.FC = () => {
     const [isDocked, undock] = useDocked();
 
     const showNotification = () => {
-        new window.fin.desktop.Notification({ url: "/dock-window.html", message: { securityId: "123456789b", messageText: "moved to the top" }, onMessage: (message: any) => console.log('you got a message!', message) });
-    }
+        const notification = new window.fin.desktop.Notification({
+            message: { securityId: "123456789b", messageText: "moved to the top" },
+            // tslint:disable-next-line
+            onMessage: (message: any) => console.log("you got a message!", message),
+            url: "/dock-window.html",
+        });
+    };
 
     useEffect(() => {
         Prism.highlightAll();
