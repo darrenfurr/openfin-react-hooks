@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Dock Window Example</title>
@@ -23,9 +24,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <button type="button" onclick="window.fin.Window.getCurrentSync().close()">Close</button>
+        <button type="button"
+            onclick="window.fin.desktop.Notification.getCurrent().sendMessageToApplication({ message: 'hi' })">Send
+            Message to
+            App</button>
     </div>
 </body>
+
 </html>
